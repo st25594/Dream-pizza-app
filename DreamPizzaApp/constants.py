@@ -14,7 +14,6 @@ PIZZAS = [
     "Vegetarian",
     "Supreme",
     "Butter Chicken",
-    "Seafood",
     "Mexican",
     "Garlic Chicken",
     "Peri Peri"

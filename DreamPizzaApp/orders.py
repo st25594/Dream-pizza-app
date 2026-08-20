@@ -35,3 +35,4 @@ class Order:
         self.total = total
 
         return total
+    []
