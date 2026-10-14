@@ -4,6 +4,16 @@ if __name__ == "__main__":
     app.mainloop()
     import customtkinter as ctk
 
+    from style import (
+    BACKGROUND,
+    PRIMARY,
+    PRIMARY_HOVER,
+    WINDOW_WIDTH,
+    WINDOW_HEIGHT,
+    WINDOW_TITLE,
+    TITLE_FONT
+)
+
 class PizzaApp(ctk.CTk):
 
     def __init__(self):
