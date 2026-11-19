@@ -2,18 +2,13 @@
 
 
 const pizzas = [
-    { id: "cheese", name: "Cheese", price: 8.50 },
-    { id: "pepperoni", name: "Pepperoni", price: 8.50 },
-    { id: "hawaiian", name: "Hawaiian", price: 8.50 },
-    { id: "bbq-chicken", name: "BBQ Chicken", price: 8.50 },
-    { id: "meat-lovers", name: "Meat Lovers", price: 8.50 },
-    { id: "vegetarian", name: "Vegetarian", price: 8.50 },
-    { id: "supreme", name: "Supreme", price: 8.50 },
-    { id: "butter-chicken", name: "Butter Chicken", price: 13.50 },
-    { id: "seafood", name: "Seafood", price: 13.50 },
-    { id: "mexican", name: "Mexican", price: 13.50 },
-    { id: "garlic-chicken", name: "Garlic Chicken", price: 13.50 },
-    { id: "peri-peri", name: "Peri Peri", price: 13.50 }
+    { id: "cheese", name: "Cheese", price: 8.50, image: "images/cheese.png", alt: "Cheese Pizza" },
+    { id: "pepperoni", name: "Pepperoni", price: 10.00, image: "images/pepperoni.png", alt: "Pepperoni Pizza" },
+    { id: "hawaiian", name: "Hawaiian", price: 8.50, image: "images/hawaiian.png", alt: "Hawaiian Pizza" },
+    { id: "vegetarian", name: "Vegetarian", price: 8.50, image: "images/vegetarian.png", alt: "Vegetarian Pizza" },
+    { id: "supreme", name: "Supreme", price: 9.00, image: "images/supreme.png", alt: "Supreme Pizza" },
+    { id: "butter-chicken", name: "Butter Chicken", price: 12.00, image: "images/butter-chicken.png", alt: "Butter Chicken Pizza" },
+    
 ];
 
 const MAX_PIZZAS = 5;
@@ -87,35 +82,57 @@ function renderMenu() {
 
     grid.innerHTML = "";
 
-    pizzas.forEach((pizza, index) => {
+    pizzas.forEach((pizza) => {
         const card = document.createElement("article");
         card.className = "pizza-card";
 
+        
+        const image = document.createElement("img");
+        image.src = pizza.image;
+        image.alt = pizza.name + " Pizza";
+        image.className = "pizza-image";
+
+        
         const heading = document.createElement("h3");
         heading.textContent = pizza.name;
 
+        
         const type = document.createElement("p");
-        type.textContent = index < 7 ? "Regular Pizza" : "Gourmet Pizza";
+        type.textContent = pizza.id === "butter-chicken"
+            ? "Gourmet Pizza"
+            : "Regular Pizza";
 
+        
         const price = document.createElement("p");
         price.textContent = money(pizza.price);
 
+        
         const button = document.createElement("button");
         button.className = "button primary";
         button.textContent = "Add Pizza";
         button.disabled = pizzaCount() >= MAX_PIZZAS;
+
         button.addEventListener("click", () => addPizza(pizza.id));
 
-        card.append(heading, type, price, button);
+       
+        card.append(image, heading, type, price, button);
+
         grid.appendChild(card);
     });
 
+    
     const count = getElement("menu-cart-count");
     const total = getElement("menu-cart-total");
 
-    if (count) count.textContent = pizzaCount();
-    if (total) total.textContent = "Subtotal: " + money(getSubtotal());
+    if (count) {
+        count.textContent = pizzaCount();
+    }
+
+    if (total) {
+        total.textContent = "Subtotal: " + money(getSubtotal());
+    }
 }
+
 
 
 function changeQuantity(id, amount) {
