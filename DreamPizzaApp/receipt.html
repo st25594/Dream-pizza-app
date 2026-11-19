@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Receipt - Dream Pizza</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body data-page="receipt">
+
+    <!-- Navigation Bar -->
+    <header class="site-header">
+
+        <a href="index.html" class="brand">
+            🍕 Dream Pizza Ordering System
+        </a>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="menu.html">Pizza Menu</a>
+            <a href="order.html">Your Order</a>
+
+        </nav>
+
+    </header>
+
+    <!-- Receipt Section -->
+    <main class="receipt-wrap">
+
+        <section class="panel receipt">
+
+            <!-- Confirmation Message -->
+            <h1>Order Confirmed!</h1>
+
+            <p>
+                Thank you for ordering from Dream Pizza.
+            </p>
+
+            <p>
+                Your order has been recorded in this browser.
+            </p>
+
+            <hr>
+
+            <!-- Receipt Heading -->
+            <h2>Dream Pizza Receipt</h2>
+
+            <!-- Receipt Details -->
+            <div id="receipt-content">
+
+                <!--
+                    JavaScript automatically displays:
+
+                    Order Number
+                    Order Date
+                    Customer Name
+                    Pickup or Delivery
+                    Delivery Address (if applicable)
+                    Phone Number (if applicable)
+                    Selected Pizzas
+                    Pizza Quantities
+                    Subtotal
+                    Delivery Fee
+                    Total Price
+                -->
+
+            </div>
+
+            <hr>
+
+            <!-- Receipt Buttons -->
+            <div class="actions">
+
+                <button
+                    type="button"
+                    id="download-receipt"
+                    class="button secondary"
+                >
+                    Download Receipt
+                </button>
+
+                <button
+                    type="button"
+                    id="new-order"
+                    class="button primary"
+                >
+                    Start Another Order
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Dream Pizza Ordering System
+        </p>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Order - Dream Pizza</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body data-page="order">
+
+    <!-- Navigation Bar -->
+    <header class="site-header">
+
+        <a href="index.html" class="brand">
+            🍕 Dream Pizza Ordering System
+        </a>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="menu.html">Pizza Menu</a>
+            <a href="order.html">Your Order</a>
+
+        </nav>
+
+    </header>
+
+    <main class="page checkout-layout">
+
+        <div class="checkout-main">
+
+            <!-- Page Heading -->
+            <section class="page-heading">
+
+                <h1>Your Pizza Order</h1>
+
+                <p>
+                    Review your selected pizzas
+                    and complete your order.
+                </p>
+
+            </section>
+
+            <!-- Selected Pizza Section -->
+            <section class="panel">
+
+                <h2>Selected Pizzas</h2>
+
+                <div id="order-items">
+
+                    <!--
+                        JavaScript displays the pizzas
+                        selected by the customer.
+                    -->
+
+                </div>
+
+                <!-- Empty Order Message -->
+                <div id="empty-order" hidden>
+
+                    <h3>Your Order Is Empty</h3>
+
+                    <p>
+                        You have not selected any pizzas yet.
+                    </p>
+
+                    <a href="menu.html" class="button primary">
+                        Choose Pizzas
+                    </a>
+
+                </div>
+
+                <p>
+                    Maximum 5 pizzas per order.
+                </p>
+
+                <a href="menu.html">
+                    Add More Pizzas
+                </a>
+
+            </section>
+
+            <!-- Customer Information -->
+            <form id="checkout-form" class="panel">
+
+                <h2>Customer Information</h2>
+
+                <!-- Customer Name -->
+                <label for="customer-name">
+                    Customer Name:
+                </label>
+
+                <input
+                    type="text"
+                    id="customer-name"
+                    name="customerName"
+                    placeholder="Enter your full name"
+                    maxlength="80"
+                    required
+                >
+
+                <!-- Pickup or Delivery -->
+                <h2>Order Type</h2>
+
+                <fieldset class="fulfilment">
+
+                    <legend>
+                        Select Pickup or Delivery
+                    </legend>
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="fulfilment"
+                            value="pickup"
+                            checked
+                        >
+
+                        Pickup
+
+                    </label>
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="fulfilment"
+                            value="delivery"
+                        >
+
+                        Delivery (+$3.00)
+
+                    </label>
+
+                </fieldset>
+
+                <!-- Delivery Details -->
+                <div id="delivery-fields" hidden>
+
+                    <h2>Delivery Information</h2>
+
+                    <label for="customer-address">
+                        Delivery Address:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customer-address"
+                        name="address"
+                        placeholder="Enter your delivery address"
+                        maxlength="180"
+                    >
+
+                    <label for="customer-phone">
+                        Phone Number:
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customer-phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        maxlength="25"
+                    >
+
+                </div>
+
+                <!-- Validation Error -->
+                <p id="form-error" role="alert" hidden></p>
+
+                <!-- Order Buttons -->
+                <div class="actions">
+
+                    <button
+                        type="button"
+                        id="cancel-order"
+                        class="button secondary"
+                    >
+                        Cancel Order
+                    </button>
+
+                    <button
+                        type="submit"
+                        id="confirm-order"
+                        class="button primary"
+                    >
+                        Confirm Order
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- Order Summary -->
+        <aside class="panel summary">
+
+            <h2>Order Summary</h2>
+
+            <p>
+                Number of Pizzas:
+                <span id="summary-count">0</span>
+            </p>
+
+            <p>
+                Subtotal:
+                <span id="summary-subtotal">$0.00</span>
+            </p>
+
+            <p>
+                Delivery Fee:
+                <span id="summary-delivery">$0.00</span>
+            </p>
+
+            <hr>
+
+            <h3>
+                Total Price:
+                <span id="summary-total">$0.00</span>
+            </h3>
+
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Dream Pizza Ordering System
+        </p>
+
+    </footer>
+
+</body>
+</html>
